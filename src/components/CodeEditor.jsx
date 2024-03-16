@@ -10,12 +10,14 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function CodeEditor({ id }) {
     const [code, setCode] = useState();
+    const [lang,setLang] = useState('languages.js');
     const notify = (msg,type) => toast(msg,{position:'bottom-center',type:type,theme:'light'});
     useEffect(() => {
         const fetchCode = async () => {
             try {
                 const { data } = await axios({ method: 'GET', url: `https://code-pair-backend.vercel.app/api/v1/read/${id}` })
                 setCode(data?.texts);
+                setLang(`languages.${data?.lang}`);
                 console.log(data.texts);
             } catch (error) {
                 notify('Something Went Wrong!','error');
@@ -33,7 +35,7 @@ function CodeEditor({ id }) {
                             <Editor
                                 value={code}
                                 onValueChange={code => setCode(code)}
-                                highlight={code => highlight(code, languages.js)}
+                                highlight={code => highlight(code, lang)}
                                 padding={10}
                                 style={{
                                     fontFamily: '"Fira code", "Fira Mono", monospace',
