@@ -40,7 +40,7 @@ export const Input = ({ data,setData }) => {
   return (
     <div className='w-min flex flex-col justify-center items-center gap-3 md:w-[80%]'>
       <ToastContainer />
-      <textarea name='code' id='code' className="textarea textarea-info dark:text-white w-[320px] h-[300px] md:w-full md:h-[500px]" placeholder="Enter code you wanna share..." value={code} onChange={(e) => setCode(e.target.value)} ></textarea>
+      <textarea name='code' id='code' className="textarea textarea-info dark:text-white w-[320px] h-[300px] md:w-full md:h-[450px]" placeholder="Enter code you wanna share..." value={code} onChange={(e) => setCode(e.target.value)} ></textarea>
       <div className='w-full flex flex-col gap-2'>
       <label className='dark:text-white'>Select Language</label>
       <select className="select select-info w-full dark:text-white" value={lang} onChange={(e) => setLang(e.target.value)}>
