@@ -54,7 +54,6 @@ export const Input = ({ data,setData }) => {
           width='100%'
           height='100%'
           theme='vs-dark'
-          defaultLanguage={lang}
           defaultValue='// Type your code here...'
           language={lang}
           onChange={getCode}
@@ -64,7 +63,7 @@ export const Input = ({ data,setData }) => {
       <div className='w-full flex flex-col gap-2'>
       <label className='dark:text-white'>Select Language</label>
       <select className="select select-info w-full dark:text-white">
-        <option disabled defaultValue="javascript" value="js">Select Language</option>
+        <option disabled defaultValue="javascript">Select Language</option>
         <option value="javascript">JavaScript</option>
         <option value="c">C</option>
         <option value="cpp">C++</option>

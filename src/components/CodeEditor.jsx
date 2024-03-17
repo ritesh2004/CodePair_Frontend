@@ -46,7 +46,6 @@ function CodeEditor({ id }) {
                         <pre style={{paddingRight:'0'}}>
                             <Editor
                                 defaultValue={code}
-                                defaultLanguage='cpp'
                                 height = '80vh'
                                 width = '100%'
                                 theme='vs-dark'
