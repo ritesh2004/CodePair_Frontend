@@ -65,7 +65,7 @@ export const Input = ({ data,setData }) => {
       </div>
       <div className='w-full flex flex-col gap-2'>
       <label className='dark:text-white'>Select Language</label>
-      <select className="select select-info w-full dark:text-white">
+      <select className="select select-info w-full dark:text-white" onChange={e=>setLang(e.target.value)}>
         <option disabled defaultValue="javascript">Select Language</option>
         <option value="javascript">JavaScript</option>
         <option value="c">C</option>
