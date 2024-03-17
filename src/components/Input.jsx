@@ -6,7 +6,7 @@ import Editor from '@monaco-editor/react';
 
 export const Input = ({ data,setData }) => {
   const [code, setCode] = useState();
-  const [lang, setLang] = useState();
+  const [lang, setLang] = useState('javascript');
   const [loading,setLoading] = useState(false);
   const editorRef = useRef(null);
   const notify = (msg,type) => toast(msg,{position:'bottom-center',type:type,theme:'light'});
@@ -54,7 +54,7 @@ export const Input = ({ data,setData }) => {
           width='100%'
           height='100%'
           theme='vs-dark'
-          defaultLanguage='javascript'
+          defaultLanguage={lang}
           defaultValue='// Type your code here...'
           language={lang}
           onChange={getCode}
