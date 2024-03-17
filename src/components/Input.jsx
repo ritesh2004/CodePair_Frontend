@@ -10,6 +10,9 @@ export const Input = ({ data,setData }) => {
   const [loading,setLoading] = useState(false);
   const editorRef = useRef(null);
   const notify = (msg,type) => toast(msg,{position:'bottom-center',type:type,theme:'light'});
+  useEffect(()=>{
+    console.log(lang);
+  },[lang])
   const handleEditorDidMount = (editor) => {
     editorRef.current = editor;
   }
