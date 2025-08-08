@@ -24,7 +24,7 @@ function CodeEditor({ id }) {
     useEffect(() => {
         const fetchCode = async () => {
             try {
-                const { data } = await axios({ method: 'GET', url: `https://code-pair-backend.vercel.app/api/v1/read/${id}` })
+                const { data } = await axios({ method: 'GET', url: `${import.meta.env.VITE_API_URL}/api/v1/read/${id}` })
                 setCode(data?.texts);
                 setLang(data?.lang);
                 console.log(data.texts);

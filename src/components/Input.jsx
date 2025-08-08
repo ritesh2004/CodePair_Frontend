@@ -30,7 +30,7 @@ export const Input = ({ data, setData }) => {
       }
       const { data } = await axios({
         method: 'POST',
-        url: 'https://code-pair-backend.vercel.app/api/v1/write',
+        url: `${import.meta.env.VITE_API_URL}/api/v1/write`,
         headers: {
           'Content-Type': 'application/json'
         },
@@ -41,7 +41,6 @@ export const Input = ({ data, setData }) => {
       })
       setLoading(false);
       setData(data);
-      notify('Code Uploaded!', 'success');
       setCode('');
       setLang('javascript');
     } catch (error) {
