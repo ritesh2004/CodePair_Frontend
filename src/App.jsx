@@ -7,13 +7,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Code } from './page/Code'
 import { Footer } from './components/Footer'
 import { Liveshare } from './page/Liveshare'
-import { Signup } from './authentication/Signup'
-import { AuthcontextProvider } from './context/Authcontext'
 
 function App() {
   return (
     <>
-    <AuthcontextProvider>
       <BrowserRouter>
         <Routes>
           <Route path='/' Component={Home} />
@@ -23,7 +20,6 @@ function App() {
         </Routes>
         {/* <Footer/> */}
       </BrowserRouter>
-    </AuthcontextProvider>
     </>
   )
 }
