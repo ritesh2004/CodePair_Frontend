@@ -11,10 +11,12 @@ export const Home = () => {
   const [string, setString] = useState();
   useEffect(() => {
     if (data?.success) {
-      setString(`https://code-pair.vercel.app/code/${data.url}`);
+      const qrUrl = `https://code-pair.vercel.app/code/${data.url}`;
+      console.log('Generated QR URL:', qrUrl);
+      setString(qrUrl);
       document.getElementById('my_modal_3').showModal();
     }
-  })
+  }, [data])
   const handleCopy = (url) => {
     try {
       navigator.clipboard.writeText(url);
@@ -38,7 +40,7 @@ export const Home = () => {
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
           </form>
           <h3 className="font-bold text-lg">Scan QR code</h3>
-          <Qrcode value={string ? string : 'Welcome'} target='_blank' />
+          <Qrcode value={string ? string : 'Welcome'} />
           {/* <p className='overflow-x-auto w-[90%] text-sm' style={{ scrollbarWidth: 'none' }}>{string}</p> */}
           <div className='flex flex-row-reverse w-[90%] justify-between'>
             <a href={string}>

@@ -39,6 +39,7 @@ export const Input = ({ data, setData }) => {
           lang: lang
         }
       })
+      console.log('API Response:', data);
       setLoading(false);
       setData(data);
       setCode('');
