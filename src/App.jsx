@@ -16,7 +16,6 @@ function App() {
           <Route path='/' Component={Home} />
           <Route path='/code/:id' Component={Code} />
           <Route path='/liveshare' Component={Liveshare} />
-          <Route path='/sign' Component={Signup} />
         </Routes>
         {/* <Footer/> */}
       </BrowserRouter>

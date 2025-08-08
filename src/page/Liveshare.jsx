@@ -231,7 +231,6 @@ export const Liveshare = () => {
         <><Navbar />
             <div className='min-h-screen flex flex-col justify-center items-center gap-5'>
                 <ToastContainer />
-                {/* <Signup /> */}
                 <div className='w-[90%] flex flex-row justify-between items-center'>
                     <div className='flex flex-row gap-2 md:gap-5'>
                         {!isLeft && <button className='btn btn-border btn-error' onClick={handleLeaveRoom}>LEAVE</button>}
